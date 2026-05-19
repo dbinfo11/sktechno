@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>소개 | SK테크노파크 공인중개사</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-surface-variant": "#43474f",
+            "on-primary": "#ffffff",
+            "primary": "#001e40",
+            "primary-container": "#003366",
+            "surface-container-high": "#e5e9eb",
+            "on-surface": "#181c1e",
+            "surface-container": "#ebeef0",
+            "surface": "#f7fafc",
+            "surface-variant": "#e0e3e5",
+            "background": "#f7fafc",
+            "on-secondary-container": "#1c6c78",
+            "outline-variant": "#c3c6d1",
+            "surface-container-low": "#f1f4f6",
+            "secondary": "#156874",
+            "secondary-container": "#a4ebf9",
+            "surface-container-highest": "#e0e3e5",
+            "on-secondary": "#ffffff",
+          },
+          fontFamily: {
+            headline: ["Manrope", "sans-serif"],
+            body: ["Inter", "sans-serif"],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="css/style.css">
+  <style>body { font-family: 'Inter', sans-serif; } h1,h2,h3,h4,h5 { font-family: 'Manrope', sans-serif; }</style>
+</head>
+<body class="bg-surface text-on-surface">
+
+  <!-- Navigation -->
+  <nav class="bg-white border-b border-slate-200 sticky top-0 z-50">
+    <div class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+      <a href="index.html" class="flex items-center gap-3">
+        <span class="material-symbols-outlined text-primary text-3xl">domain</span>
+        <div>
+          <div class="text-sm font-black text-primary leading-tight">SK테크노파크</div>
+          <div class="text-xs text-slate-400">공인중개사 사무소</div>
+        </div>
+      </a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="index.html"   class="text-sm font-bold text-slate-500 hover:text-primary transition-colors border-b-2 border-transparent pb-0.5">홈</a>
+        <a href="about.html"   class="text-sm font-bold text-primary border-b-2 border-primary pb-0.5">소개</a>
+        <a href="park.html"    class="text-sm font-bold text-slate-500 hover:text-primary transition-colors border-b-2 border-transparent pb-0.5">SK테크노파크</a>
+        <a href="cases.html"   class="text-sm font-bold text-slate-500 hover:text-primary transition-colors border-b-2 border-transparent pb-0.5">거래 사례</a>
+        <a href="gallery.html" class="text-sm font-bold text-slate-500 hover:text-primary transition-colors border-b-2 border-transparent pb-0.5">사진 갤러리</a>
+        <a href="faq.html"     class="text-sm font-bold text-slate-500 hover:text-primary transition-colors border-b-2 border-transparent pb-0.5">자주 묻는 질문</a>
+      </div>
+      <button class="md:hidden p-2 hover:bg-slate-100 rounded-lg transition-colors" id="mobile-menu-btn">
+        <span class="material-symbols-outlined text-primary" id="menu-icon">menu</span>
+      </button>
+    </div>
+    <div class="hidden bg-white border-t border-slate-100 px-6 py-3 space-y-1" id="mobile-nav">
+      <a href="index.html"   class="block text-sm font-semibold text-slate-600 py-2.5 border-b border-slate-100">홈</a>
+      <a href="about.html"   class="block text-sm font-semibold text-primary py-2.5 border-b border-slate-100">소개</a>
+      <a href="park.html"    class="block text-sm font-semibold text-slate-600 py-2.5 border-b border-slate-100">SK테크노파크</a>
+      <a href="cases.html"   class="block text-sm font-semibold text-slate-600 py-2.5 border-b border-slate-100">거래 사례</a>
+      <a href="gallery.html" class="block text-sm font-semibold text-slate-600 py-2.5 border-b border-slate-100">사진 갤러리</a>
+      <a href="faq.html"     class="block text-sm font-semibold text-slate-600 py-2.5">자주 묻는 질문</a>
+    </div>
+  </nav>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <img class="page-hero-img" src="새 폴더 (3)/assets/conference-room.png" alt="소개">
+    <div class="page-hero-gradient"></div>
+    <div class="page-hero-content max-w-7xl mx-auto px-6">
+      <p class="page-hero-breadcrumb"><a href="index.html">홈</a><span>/</span>소개</p>
+      <h1 class="page-hero-title">소개</h1>
+      <p class="page-hero-desc">SK테크노파크 전문 공인중개사 박성준 소장을 소개합니다.</p>
+    </div>
+  </section>
+
+  <!-- Intro -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+
+      <div class="flex flex-col lg:flex-row gap-16 items-center fade-in">
+
+        <!-- 왼쪽: 텍스트 -->
+        <div class="flex-1 min-w-0">
+          <h2 class="text-3xl md:text-4xl font-extrabold text-primary mt-3 mb-6 leading-snug">신뢰와 전문성으로<br>공간의 가치를 연결합니다.</h2>
+          <p class="text-on-surface-variant leading-relaxed text-sm mb-4">SK테크노파크 단지 안에서 15년째, 이곳만 전문적으로 중개해 온 부동산입니다. 수많은 지역을 다루는 다른 부동산들과는 전문성이 다릅니다.</p>
+          <p class="text-on-surface-variant leading-relaxed text-sm">단순 계약서 작성으로 끝이 아닌, 계약 이후 발생하는 모든 문제를 항상 곁에서 도와드립니다. SK테크노파크 입주를 고려하신다면, 저희 부동산과 함께하세요.</p>
+          <div class="mt-8 flex items-center gap-3">
+            <div>
+              <div class="text-sm font-extrabold text-primary">박성준 소장 드림</div>
+              <div class="text-xs text-slate-400 mt-0.5">등록번호 48123-2020-00028</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 오른쪽: 2×2 특징 카드 -->
+        <div class="flex-1 min-w-0 grid grid-cols-2 gap-4">
+
+          <div class="bg-slate-50 border border-slate-100 rounded-2xl p-6 hover:shadow-md transition-shadow fade-in">
+            <div class="w-11 h-11 rounded-xl flex items-center justify-center mb-4" style="background:rgba(0,30,64,0.07)">
+              <span class="material-symbols-outlined text-primary text-2xl">workspace_premium</span>
+            </div>
+            <h3 class="font-extrabold text-primary text-sm mb-2">전문성</h3>
+            <p class="text-xs text-on-surface-variant leading-relaxed">공장·사무실 전문 중개 경험과 시장 분석으로 최적의 매물 제안</p>
+          </div>
+
+          <div class="bg-slate-50 border border-slate-100 rounded-2xl p-6 hover:shadow-md transition-shadow fade-in" style="transition-delay:.07s">
+            <div class="w-11 h-11 rounded-xl flex items-center justify-center mb-4" style="background:rgba(0,30,64,0.07)">
+              <span class="material-symbols-outlined text-primary text-2xl">verified</span>
+            </div>
+            <h3 class="font-extrabold text-primary text-sm mb-2">신뢰</h3>
+            <p class="text-xs text-on-surface-variant leading-relaxed">정확한 정보와 투명한 거래로 고객의 신뢰를 최우선</p>
+          </div>
+
+          <div class="bg-slate-50 border border-slate-100 rounded-2xl p-6 hover:shadow-md transition-shadow fade-in" style="transition-delay:.14s">
+            <div class="w-11 h-11 rounded-xl flex items-center justify-center mb-4" style="background:rgba(0,30,64,0.07)">
+              <span class="material-symbols-outlined text-primary text-2xl">support_agent</span>
+            </div>
+            <h3 class="font-extrabold text-primary text-sm mb-2">맞춤 컨설팅</h3>
+            <p class="text-xs text-on-surface-variant leading-relaxed">고객의 업종과 조건에 맞춘 공간 솔루션 제공</p>
+          </div>
+
+          <div class="bg-slate-50 border border-slate-100 rounded-2xl p-6 hover:shadow-md transition-shadow fade-in" style="transition-delay:.21s">
+            <div class="w-11 h-11 rounded-xl flex items-center justify-center mb-4" style="background:rgba(0,30,64,0.07)">
+              <span class="material-symbols-outlined text-primary text-2xl">shield_with_heart</span>
+            </div>
+            <h3 class="font-extrabold text-primary text-sm mb-2">지속적인 관리</h3>
+            <p class="text-xs text-on-surface-variant leading-relaxed">계약 이후에도 안정적인 사후 관리 지원</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Contact Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-20">
+        <div class="bg-surface-container-low rounded-xl p-8 text-center fade-in">
+          <span class="material-symbols-outlined text-primary text-4xl mb-4 block">phone_in_talk</span>
+          <h3 class="font-bold text-primary mb-3">Phone</h3>
+          <p class="text-sm text-on-surface-variant leading-loose">010-5623-2454<br>055-265-1551</p>
+        </div>
+        <div class="bg-surface-container-low rounded-xl p-8 text-center fade-in" style="transition-delay:.1s">
+          <span class="material-symbols-outlined text-primary text-4xl mb-4 block">contact_mail</span>
+          <h3 class="font-bold text-primary mb-3">Fax / Email</h3>
+          <p class="text-sm text-on-surface-variant leading-loose">Fax: 055-600-6886<br>dk11232@naver.com</p>
+        </div>
+        <div class="bg-surface-container-low rounded-xl p-8 text-center fade-in" style="transition-delay:.2s">
+          <span class="material-symbols-outlined text-primary text-4xl mb-4 block">location_on</span>
+          <h3 class="font-bold text-primary mb-3">Office</h3>
+          <p class="text-sm text-on-surface-variant leading-loose">경남 창원시 성산구 완암로 50<br>넥스동 106호 (SK테크노파크)</p>
+        </div>
+      </div>
+
+      <!-- Map -->
+      <div class="mt-16 rounded-xl overflow-hidden shadow-md fade-in" style="transition-delay:.3s">
+        <iframe
+          src="https://maps.google.com/maps?q=경남+창원시+성산구+성산동+77-1&hl=ko&z=17&output=embed"
+          width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-slate-100 border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-10">
+      <div class="space-y-3">
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-primary">domain</span>
+          <span class="font-black text-primary text-sm">SK테크노파크 공인중개사 사무소</span>
+        </div>
+        <p class="text-xs text-slate-500">등록번호 48123-2020-00028 | 소장: 박성준</p>
+        <p class="text-xs text-slate-500">신뢰와 정직을 바탕으로 최선의 결과를 약속드립니다.</p>
+      </div>
+      <div>
+        <h5 class="text-xs font-bold text-primary mb-4 uppercase tracking-wide">Quick Links</h5>
+        <ul class="space-y-2">
+          <li><a href="index.html"   class="text-xs text-slate-500 hover:text-primary transition-colors">홈</a></li>
+          <li><a href="about.html"   class="text-xs text-slate-500 hover:text-primary transition-colors">소개</a></li>
+          <li><a href="park.html"    class="text-xs text-slate-500 hover:text-primary transition-colors">SK테크노파크</a></li>
+          <li><a href="cases.html"   class="text-xs text-slate-500 hover:text-primary transition-colors">거래 사례</a></li>
+          <li><a href="gallery.html" class="text-xs text-slate-500 hover:text-primary transition-colors">사진 갤러리</a></li>
+          <li><a href="faq.html"     class="text-xs text-slate-500 hover:text-primary transition-colors">자주 묻는 질문</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 class="text-xs font-bold text-primary mb-4 uppercase tracking-wide">Contact Us</h5>
+        <ul class="space-y-2.5 text-xs text-slate-500">
+          <li class="flex items-start gap-2"><span class="material-symbols-outlined text-sm text-primary mt-0.5">phone</span><span>010-5623-2454 / 055-265-1551</span></li>
+          <li class="flex items-start gap-2"><span class="material-symbols-outlined text-sm text-primary mt-0.5">print</span><span>Fax. 055-600-6886</span></li>
+          <li class="flex items-start gap-2"><span class="material-symbols-outlined text-sm text-primary mt-0.5">mail</span><span>dk11232@naver.com</span></li>
+          <li class="flex items-start gap-2"><span class="material-symbols-outlined text-sm text-primary mt-0.5">location_on</span><span>경남 창원시 성산구 완암로 50, 넥스동 106호</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-slate-200 px-6 py-4 max-w-7xl mx-auto">
+      <p class="text-xs text-slate-400">&copy; <span id="year"></span> SK테크노파크 공인중개사 사무소. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>자주 묻는 질문 | SK테크노파크 공인중개사</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-surface-variant": "#43474f",
+            "on-primary": "#ffffff",
+            "primary": "#001e40",
+            "primary-container": "#003366",
+            "surface-container-high": "#e5e9eb",
+            "on-surface": "#181c1e",
+            "surface-container": "#ebeef0",
+            "surface": "#f7fafc",
+            "surface-variant": "#e0e3e5",
+            "background": "#f7fafc",
+            "on-secondary-container": "#1c6c78",
+            "outline-variant": "#c3c6d1",
+            "surface-container-low": "#f1f4f6",
+            "secondary": "#156874",
+            "secondary-container": "#a4ebf9",
+            "surface-container-highest": "#e0e3e5",
+            "on-secondary": "#ffffff",
+          },
+          fontFamily: {
+            headline: ["Manrope", "sans-serif"],
+            body: ["Inter", "sans-serif"],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    h1,h2,h3,h4,h5 { font-family: 'Manrope', sans-serif; }
+
+    .faq-answer {
+      display: none;
+      padding: 0 0 24px 28px;
+    }
+    .faq-answer.open { display: block; }
+
+    .faq-icon {
+      transition: transform .2s;
+      flex-shrink: 0;
+    }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+  </style>
+</head>
+<body class="bg-surface text-on-surface">
+
+  <!-- Navigation -->
+  <nav class="bg-white border-b border-slate-200 sticky top-0 z-50">
+    <div class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+      <a href="index.html" class="flex items-center gap-3">
+        <span class="material-symbols-outlined text-primary text-3xl">domain</span>
+        <div>
+          <div class="text-sm font-black text-primary leading-tight">SK테크노파크</div>
+          <div class="text-xs text-slate-400">공인중개사 사무소</div>
+        </div>
+      </a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="index.html"   class="text-sm font-bold text-slate-500 hover:text-primary transition-colors border-b-2 border-transparent pb-0.5">홈</a>
+        <a href="about.html"   class="text-sm font-bold text-slate-500 hover:text-primary transition-colors border-b-2 border-transparent pb-0.5">소개</a>
+        <a href="park.html"    class="text-sm font-bold text-slate-500 hover:text-primary transition-colors border-b-2 border-transparent pb-0.5">SK테크노파크</a>
+        <a href="cases.html"   class="text-sm font-bold text-slate-500 hover:text-primary transition-colors border-b-2 border-transparent pb-0.5">거래 사례</a>
+        <a href="gallery.html" class="text-sm font-bold text-slate-500 hover:text-primary transition-colors border-b-2 border-transparent pb-0.5">사진 갤러리</a>
+        <a href="faq.html"     class="text-sm font-bold text-primary border-b-2 border-primary pb-0.5">자주 묻는 질문</a>
+      </div>
+      <button class="md:hidden p-2 hover:bg-slate-100 rounded-lg transition-colors" id="mobile-menu-btn">
+        <span class="material-symbols-outlined text-primary" id="menu-icon">menu</span>
+      </button>
+    </div>
+    <div class="hidden bg-white border-t border-slate-100 px-6 py-3 space-y-1" id="mobile-nav">
+      <a href="index.html"   class="block text-sm font-semibold text-slate-600 py-2.5 border-b border-slate-100">홈</a>
+      <a href="about.html"   class="block text-sm font-semibold text-slate-600 py-2.5 border-b border-slate-100">소개</a>
+      <a href="park.html"    class="block text-sm font-semibold text-slate-600 py-2.5 border-b border-slate-100">SK테크노파크</a>
+      <a href="cases.html"   class="block text-sm font-semibold text-slate-600 py-2.5 border-b border-slate-100">거래 사례</a>
+      <a href="gallery.html" class="block text-sm font-semibold text-slate-600 py-2.5 border-b border-slate-100">사진 갤러리</a>
+      <a href="faq.html"     class="block text-sm font-semibold text-primary py-2.5">자주 묻는 질문</a>
+    </div>
+  </nav>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <img class="page-hero-img" src="새 폴더 (3)/assets/conference-room.png" alt="자주 묻는 질문">
+    <div class="page-hero-gradient"></div>
+    <div class="page-hero-content max-w-7xl mx-auto px-6">
+      <p class="page-hero-breadcrumb"><a href="index.html">홈</a><span>/</span>자주 묻는 질문</p>
+      <h1 class="page-hero-title">자주 묻는 질문</h1>
+      <p class="page-hero-desc">고객님이 자주 문의하시는 질문과 답변을 모아 안내해 드립니다.</p>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-16">
+
+        <!-- 왼쪽: 설명 -->
+        <div class="lg:col-span-1">
+          <span class="text-xs font-bold tracking-widest text-secondary uppercase">FAQ</span>
+          <h2 class="text-3xl md:text-4xl font-extrabold text-primary mt-3 mb-6 leading-snug">자주 묻는<br>질문</h2>
+          <p class="text-sm text-on-surface-variant leading-relaxed mb-8">자주 문의 주시는 질문과 답변을 확인해 보세요.<br>더 궁금한 점은 문의하기를 이용해 주세요.</p>
+          <a href="about.html" class="inline-flex items-center gap-2 text-sm font-bold text-primary border-2 border-primary rounded-xl px-5 py-3 hover:bg-primary hover:text-white transition-colors">
+            문의하기
+            <span class="material-symbols-outlined text-base leading-none">arrow_forward</span>
+          </a>
+        </div>
+
+        <!-- 오른쪽: 아코디언 -->
+        <div class="lg:col-span-2 divide-y divide-slate-200">
+
+          <div class="faq-item">
+            <button class="faq-btn w-full flex items-start gap-4 py-6 text-left" onclick="toggleFaq(this)">
+              <span class="font-extrabold text-primary text-sm leading-none mt-0.5 flex-shrink-0">Q.</span>
+              <span class="flex-1 font-bold text-on-surface text-sm leading-snug">주차가 불편하다는 말이 있던데, 실제로 어떻게 되나요?</span>
+              <span class="material-symbols-outlined text-primary faq-icon text-xl">add</span>
+            </button>
+            <div class="faq-answer open">
+              <p class="text-sm text-on-surface-variant leading-loose">2020년대 초반까지는 출퇴근 시간대에 주차가 꽤 복잡하다는 이야기가 있었던 게 사실입니다. 다만 최근 들어 기업들이 최소 인원 운영과 자동화 설비를 도입하는 추세로 바뀌면서, 예전에 비하면 체감이 많이 달라졌습니다.<br><br>SK테크노파크는 1층부터 12층까지 각 층마다 주차 공간이 마련되어 있어 전체 주차 규모 자체가 상당합니다. 출근 시간대에 제공되는 전용 주차 공간도 있고, 호실 바로 앞에 주차가 가능한 호실도 있어 익숙해지면 크게 불편함이 없습니다. 오히려 최근에 신규 분양된 다른 지식산업센터들과 비교해 보면 SK테크노파크의 주차 공간이 훨씬 넉넉한 편입니다.</p>
+
+              <!-- 주차 비교 표 -->
+              <div class="mt-5 overflow-hidden rounded-xl border border-slate-200">
+                <table class="w-full text-sm">
+                  <thead>
+                    <tr class="bg-slate-50 border-b border-slate-200">
+                      <th class="text-left px-5 py-3 text-xs font-extrabold text-primary">단지명</th>
+                      <th class="text-center px-5 py-3 text-xs font-extrabold text-primary">호실 수</th>
+                      <th class="text-center px-5 py-3 text-xs font-extrabold text-primary">주차 대수</th>
+                      <th class="text-center px-5 py-3 text-xs font-extrabold text-primary">호실당 주차</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="border-b border-slate-100" style="background:#eef4fb">
+                      <td class="px-5 py-3.5 font-extrabold text-primary text-xs flex items-center gap-1.5">
+                        <span class="inline-block w-1.5 h-1.5 rounded-full bg-primary"></span>SK테크노파크
+                      </td>
+                      <td class="px-5 py-3.5 text-center font-bold text-primary text-xs">665</td>
+                      <td class="px-5 py-3.5 text-center font-extrabold text-primary text-xs">1,347대</td>
+                      <td class="px-5 py-3.5 text-center text-xs">
+                        <span class="inline-block bg-primary text-white font-extrabold px-2 py-0.5 rounded-full">2.03대</span>
+                      </td>
+                    </tr>
+                    <tr class="border-b border-slate-100 bg-white">
+                      <td class="px-5 py-3.5 text-xs font-semibold text-slate-600">신화</td>
+                      <td class="px-5 py-3.5 text-center text-xs text-slate-500">695</td>
+                      <td class="px-5 py-3.5 text-center text-xs text-slate-500">847대</td>
+                      <td class="px-5 py-3.5 text-center text-xs text-slate-400">1.22대</td>
+                    </tr>
+                    <tr class="bg-white">
+                      <td class="px-5 py-3.5 text-xs font-semibold text-slate-600">스마트업</td>
+                      <td class="px-5 py-3.5 text-center text-xs text-slate-500">332</td>
+                      <td class="px-5 py-3.5 text-center text-xs text-slate-500">373대</td>
+                      <td class="px-5 py-3.5 text-center text-xs text-slate-400">1.12대</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-btn w-full flex items-start gap-4 py-6 text-left" onclick="toggleFaq(this)">
+              <span class="font-extrabold text-primary text-sm leading-none mt-0.5 flex-shrink-0">Q.</span>
+              <span class="flex-1 font-bold text-on-surface text-sm leading-snug">계약 기간은 어떻게 설정할 수 있나요?</span>
+              <span class="material-symbols-outlined text-primary faq-icon text-xl">add</span>
+            </button>
+            <div class="faq-answer">
+              <p class="text-sm text-on-surface-variant leading-loose">대부분 2년 단위로 계약하며, 기간은 임차인·임대인 협의에 따라 얼마든지 조율 가능합니다. 다만 1년 미만의 초단기 계약은 일반 임대와 달리 조건이 달라질 수 있으니, 단기 입주를 검토 중이시라면 사전에 상담을 통해 조건을 먼저 확인해 보시는 걸 권해드립니다.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-btn w-full flex items-start gap-4 py-6 text-left" onclick="toggleFaq(this)">
+              <span class="font-extrabold text-primary text-sm leading-none mt-0.5 flex-shrink-0">Q.</span>
+              <span class="flex-1 font-bold text-on-surface text-sm leading-snug">입주 가능한 업종은 어떻게 되나요?</span>
+              <span class="material-symbols-outlined text-primary faq-icon text-xl">add</span>
+            </button>
+            <div class="faq-answer">
+              <p class="text-sm text-on-surface-variant leading-loose">제조업, IT·소프트웨어 개발, R&amp;D 관련 업종이 대표적으로 입주 가능하며, 지식산업센터 요건에 맞는 업종이라면 대부분 검토할 수 있습니다. 유통·물류 업종은 입주 요건에 해당하지 않으니 참고 부탁드립니다. 업종별로 세부 등록 요건이 다를 수 있으니, 희망 업종을 먼저 알려 주시면 입주 가능 여부를 빠르게 확인해 드리겠습니다.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-btn w-full flex items-start gap-4 py-6 text-left" onclick="toggleFaq(this)">
+              <span class="font-extrabold text-primary text-sm leading-none mt-0.5 flex-shrink-0">Q.</span>
+              <span class="flex-1 font-bold text-on-surface text-sm leading-snug">평당 임대가격은 얼마 정도 되나요?</span>
+              <span class="material-symbols-outlined text-primary faq-icon text-xl">add</span>
+            </button>
+            <div class="faq-answer">
+              <p class="text-sm text-on-surface-variant leading-loose">평균적으로 평당 2만 5천 원에서 3만 원 선에서 형성되어 있습니다. 다만 층수, 동 위치, 인테리어 유무에 따라 가격 차이가 있어 같은 면적이라도 조건에 따라 달라질 수 있습니다. 관리비는 별도로 부과되며, 현재 나와 있는 매물 기준으로 구체적인 금액을 안내해 드릴 수 있으니 편하게 문의 주세요.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-btn w-full flex items-start gap-4 py-6 text-left" onclick="toggleFaq(this)">
+              <span class="font-extrabold text-primary text-sm leading-none mt-0.5 flex-shrink-0">Q.</span>
+              <span class="flex-1 font-bold text-on-surface text-sm leading-snug">사무실을 알아보고 있는데, 주변에 공장이 많으면 소음이나 환경이 걱정됩니다.</span>
+              <span class="material-symbols-outlined text-primary faq-icon text-xl">add</span>
+            </button>
+            <div class="faq-answer">
+              <p class="text-sm text-on-surface-variant leading-loose">충분히 가질 수 있는 걱정인데, SK테크노파크는 공장이 들어서는 공장동과 사무 용도로만 운영되는 사무동(넥스동)이 물리적으로 분리되어 있습니다. 사무실은 넥스동에 집중되어 있어 공장 소음이나 분진 같은 환경적인 영향을 거의 받지 않습니다. 사무 환경만 놓고 보면 일반 오피스 빌딩과 큰 차이 없이 쾌적하게 이용하실 수 있습니다.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-btn w-full flex items-start gap-4 py-6 text-left" onclick="toggleFaq(this)">
+              <span class="font-extrabold text-primary text-sm leading-none mt-0.5 flex-shrink-0">Q.</span>
+              <span class="flex-1 font-bold text-on-surface text-sm leading-snug">임대료 외에 추가 비용이 발생하나요?</span>
+              <span class="material-symbols-outlined text-primary faq-icon text-xl">add</span>
+            </button>
+            <div class="faq-answer">
+              <p class="text-sm text-on-surface-variant leading-loose">관리비, 전기·수도 요금 등 부대비용이 별도로 발생할 수 있습니다.<br>계약 전 상세 비용 항목을 충분히 안내해 드리겠습니다.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-slate-100 border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-10">
+      <div class="space-y-3">
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-primary">domain</span>
+          <span class="font-black text-primary text-sm">SK테크노파크 공인중개사 사무소</span>
+        </div>
+        <p class="text-xs text-slate-500">등록번호 48123-2020-00028 | 소장: 박성준</p>
+        <p class="text-xs text-slate-500">신뢰와 정직을 바탕으로 최선의 결과를 약속드립니다.</p>
+      </div>
+      <div>
+        <h5 class="text-xs font-bold text-primary mb-4 uppercase tracking-wide">Quick Links</h5>
+        <ul class="space-y-2">
+          <li><a href="index.html"   class="text-xs text-slate-500 hover:text-primary transition-colors">홈</a></li>
+          <li><a href="about.html"   class="text-xs text-slate-500 hover:text-primary transition-colors">소개</a></li>
+          <li><a href="park.html"    class="text-xs text-slate-500 hover:text-primary transition-colors">SK테크노파크</a></li>
+          <li><a href="cases.html"   class="text-xs text-slate-500 hover:text-primary transition-colors">거래 사례</a></li>
+          <li><a href="gallery.html" class="text-xs text-slate-500 hover:text-primary transition-colors">사진 갤러리</a></li>
+          <li><a href="faq.html"     class="text-xs text-slate-500 hover:text-primary transition-colors">자주 묻는 질문</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 class="text-xs font-bold text-primary mb-4 uppercase tracking-wide">Contact Us</h5>
+        <ul class="space-y-2.5 text-xs text-slate-500">
+          <li class="flex items-start gap-2"><span class="material-symbols-outlined text-sm text-primary mt-0.5">phone</span><span>010-5623-2454 / 055-265-1551</span></li>
+          <li class="flex items-start gap-2"><span class="material-symbols-outlined text-sm text-primary mt-0.5">print</span><span>Fax. 055-600-6886</span></li>
+          <li class="flex items-start gap-2"><span class="material-symbols-outlined text-sm text-primary mt-0.5">mail</span><span>dk11232@naver.com</span></li>
+          <li class="flex items-start gap-2"><span class="material-symbols-outlined text-sm text-primary mt-0.5">location_on</span><span>경남 창원시 성산구 완암로 50, 넥스동 106호</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-slate-200 px-6 py-4 max-w-7xl mx-auto">
+      <p class="text-xs text-slate-400">&copy; <span id="year"></span> SK테크노파크 공인중개사 사무소. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    function toggleFaq(btn) {
+      const item = btn.closest('.faq-item');
+      const answer = item.querySelector('.faq-answer');
+      const icon = btn.querySelector('.faq-icon');
+      const isOpen = answer.classList.contains('open');
+
+      document.querySelectorAll('.faq-item').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.faq-answer').classList.remove('open');
+        i.querySelector('.faq-icon').textContent = 'add';
+      });
+
+      if (!isOpen) {
+        item.classList.add('open');
+        answer.classList.add('open');
+        icon.textContent = 'remove';
+      }
+    }
+
+    // 첫 번째 항목 기본 열림 상태
+    const firstItem = document.querySelector('.faq-item');
+    if (firstItem) {
+      firstItem.classList.add('open');
+      firstItem.querySelector('.faq-icon').textContent = 'remove';
+    }
+  </script>
+</body>
+</html>

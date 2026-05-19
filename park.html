@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SK테크노파크 소개 | 공인중개사 사무소</title>
+  <meta name="description" content="창원 성산구 SK테크노파크 지식산업센터 소개. 경남 최대 규모, 드라이브인, 압도적 가격 경쟁력.">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-surface-variant": "#43474f",
+            "on-primary": "#ffffff",
+            "primary": "#001e40",
+            "primary-container": "#003366",
+            "surface-container-high": "#e5e9eb",
+            "on-surface": "#181c1e",
+            "surface-container": "#ebeef0",
+            "surface": "#f7fafc",
+            "surface-variant": "#e0e3e5",
+            "background": "#f7fafc",
+            "on-secondary-container": "#1c6c78",
+            "outline-variant": "#c3c6d1",
+            "surface-container-low": "#f1f4f6",
+            "secondary": "#156874",
+            "secondary-container": "#a4ebf9",
+            "surface-container-highest": "#e0e3e5",
+            "on-secondary": "#ffffff",
+          },
+          fontFamily: {
+            headline: ["Manrope", "sans-serif"],
+            body: ["Inter", "sans-serif"],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="css/style.css">
+  <style>body { font-family: 'Inter', sans-serif; } h1,h2,h3,h4,h5 { font-family: 'Manrope', sans-serif; }</style>
+</head>
+<body class="bg-surface text-on-surface">
+
+  <!-- Navigation -->
+  <nav class="bg-white border-b border-slate-200 sticky top-0 z-50">
+    <div class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+      <a href="index.html" class="flex items-center gap-3">
+        <span class="material-symbols-outlined text-primary text-3xl">domain</span>
+        <div>
+          <div class="text-sm font-black text-primary leading-tight">SK테크노파크</div>
+          <div class="text-xs text-slate-400">공인중개사 사무소</div>
+        </div>
+      </a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="index.html"   class="text-sm font-bold text-slate-500 hover:text-primary transition-colors border-b-2 border-transparent pb-0.5">홈</a>
+        <a href="about.html"   class="text-sm font-bold text-slate-500 hover:text-primary transition-colors border-b-2 border-transparent pb-0.5">소개</a>
+        <a href="park.html"    class="text-sm font-bold text-primary border-b-2 border-primary pb-0.5">SK테크노파크</a>
+        <a href="cases.html"   class="text-sm font-bold text-slate-500 hover:text-primary transition-colors border-b-2 border-transparent pb-0.5">거래 사례</a>
+        <a href="gallery.html" class="text-sm font-bold text-slate-500 hover:text-primary transition-colors border-b-2 border-transparent pb-0.5">사진 갤러리</a>
+        <a href="faq.html"     class="text-sm font-bold text-slate-500 hover:text-primary transition-colors border-b-2 border-transparent pb-0.5">자주 묻는 질문</a>
+      </div>
+      <button class="md:hidden p-2 hover:bg-slate-100 rounded-lg transition-colors" id="mobile-menu-btn">
+        <span class="material-symbols-outlined text-primary" id="menu-icon">menu</span>
+      </button>
+    </div>
+    <div class="hidden bg-white border-t border-slate-100 px-6 py-3 space-y-1" id="mobile-nav">
+      <a href="index.html"   class="block text-sm font-semibold text-slate-600 py-2.5 border-b border-slate-100">홈</a>
+      <a href="about.html"   class="block text-sm font-semibold text-slate-600 py-2.5 border-b border-slate-100">소개</a>
+      <a href="park.html"    class="block text-sm font-semibold text-primary py-2.5 border-b border-slate-100">SK테크노파크</a>
+      <a href="cases.html"   class="block text-sm font-semibold text-slate-600 py-2.5 border-b border-slate-100">거래 사례</a>
+      <a href="gallery.html" class="block text-sm font-semibold text-slate-600 py-2.5 border-b border-slate-100">사진 갤러리</a>
+      <a href="faq.html"     class="block text-sm font-semibold text-slate-600 py-2.5">자주 묻는 질문</a>
+    </div>
+  </nav>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <img class="page-hero-img" src="새 폴더 (3)/assets/logistics-center.png" alt="SK테크노파크">
+    <div class="page-hero-gradient"></div>
+    <div class="page-hero-content max-w-7xl mx-auto px-6">
+      <p class="page-hero-breadcrumb"><a href="index.html">홈</a><span>/</span>SK테크노파크</p>
+      <h1 class="page-hero-title">SK테크노파크</h1>
+      <p class="page-hero-desc">창원 성산구 SK테크노파크 지식산업센터 단지를 소개합니다.</p>
+    </div>
+  </section>
+
+  <!-- 동별 인터랙티브 건물 안내 -->
+  <section class="bg-surface py-12">
+    <div class="max-w-5xl mx-auto px-6 fade-in">
+      <div class="building-intro">
+
+        <!-- 하단 호버 라벨 -->
+        <div class="bi-zones">
+          <div class="bi-zone" data-target="메카">메카동</div>
+          <div class="bi-zone" data-target="테크">테크동</div>
+          <div class="bi-zone" data-target="넥스">넥스동</div>
+        </div>
+
+        <!-- 이미지 레이어 -->
+        <img id="bi-bw"   src="새 폴더 (3)/전체 흑백.webp"  alt="전체">
+        <img id="bi-메카" src="새 폴더 (3)/메카동.webp"    alt="메카동">
+        <img id="bi-테크" src="새 폴더 (3)/테크동.webp"    alt="테크동">
+        <img id="bi-넥스" src="새 폴더 (3)/넥스동.webp"    alt="넥스동">
+
+        <!-- 설명 오버레이 -->
+        <div class="bi-desc" id="bi-desc-메카">
+          <h2>메카동</h2>
+          <p>저층부: 기계·금속업체 (중공업)<br>
+             중층부: 일반기계 제조업 (경공업)<br>
+             고층부: 지식기반 제조업<br>
+             B1~9F: Drive-in</p>
+        </div>
+        <div class="bi-desc" id="bi-desc-테크">
+          <h2>테크동</h2>
+          <p>저층부: 기계·금속업체 (중공업)<br>
+             중층부: 일반기계 제조업 (경공업)<br>
+             고층부: 지식기반 제조업<br>
+             B1~7F: Drive-in</p>
+        </div>
+        <div class="bi-desc bi-desc-left" id="bi-desc-넥스">
+          <h2>넥스동</h2>
+          <p>IT 및 벤처시설<br>
+             연구시설<br>
+             지식기반 제조업<br>
+             R&D 시설</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .building-intro {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1536 / 1024;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.45);
+    }
+    .building-intro img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: opacity 0.4s ease;
+    }
+    #bi-bw   { opacity: 1; z-index: 1; }
+    #bi-메카 { opacity: 0; z-index: 2; }
+    #bi-테크 { opacity: 0; z-index: 2; }
+    #bi-넥스 { opacity: 0; z-index: 2; }
+
+    .bi-zones {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      display: flex;
+      z-index: 10;
+    }
+    .bi-zone {
+      flex: 1;
+      padding: clamp(10px, 2%, 18px) 0;
+      text-align: center;
+      cursor: pointer;
+      font-size: clamp(0.75rem, 1.5vw, 1rem);
+      font-weight: 700;
+      letter-spacing: 2px;
+      background: rgba(0,0,0,0.55);
+      color: rgba(255,255,255,0.8);
+      transition: background 0.3s, color 0.3s;
+      user-select: none;
+    }
+    .bi-zone + .bi-zone { border-left: 1px solid rgba(255,255,255,0.2); }
+    .bi-zone:hover { background: rgba(0,10,30,0.8); color: #fff; }
+
+    /* 기본 활성 상태 (data-active) */
+    .bi-zones[data-active="메카"] ~ #bi-메카 { opacity: 1; }
+    .bi-zones[data-active="메카"] ~ #bi-bw   { opacity: 0; }
+    .bi-zones[data-active="메카"] ~ #bi-desc-메카 { opacity: 1; }
+    .bi-zones[data-active="메카"] [data-target="메카"] { background: rgba(0,10,30,0.85); color: #fff; }
+
+    /* CSS :has() 호버 인터랙션 (호버 중엔 data-active 덮어씀) */
+    .bi-zones:has([data-target="메카"]:hover) ~ #bi-메카 { opacity: 1; }
+    .bi-zones:has([data-target="테크"]:hover) ~ #bi-테크 { opacity: 1; }
+    .bi-zones:has([data-target="넥스"]:hover) ~ #bi-넥스 { opacity: 1; }
+    .bi-zones:has(.bi-zone:hover) ~ #bi-bw   { opacity: 0; }
+
+    .bi-desc {
+      position: absolute;
+      top: 0;
+      bottom: clamp(36px, 6%, 56px);
+      width: 36%;
+      right: 4%;
+      z-index: 20;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(16px, 3%, 32px) clamp(14px, 2.5%, 28px);
+      background: linear-gradient(to left, rgba(10,10,30,0.88), rgba(10,10,30,0.35));
+      opacity: 0;
+      transition: opacity 0.35s ease;
+      pointer-events: none;
+    }
+    .bi-desc.bi-desc-left {
+      right: auto;
+      left: 4%;
+      background: linear-gradient(to right, rgba(10,10,30,0.88), rgba(10,10,30,0.35));
+    }
+    .bi-desc h2 {
+      font-size: clamp(0.9rem, 2vw, 1.35rem);
+      letter-spacing: 3px;
+      margin-bottom: clamp(8px, 1.5%, 14px);
+      color: #a0c4ff;
+      font-family: 'Manrope', sans-serif;
+    }
+    .bi-desc p {
+      font-size: clamp(0.7rem, 1.2vw, 0.9rem);
+      line-height: 2;
+      color: #dde;
+    }
+
+    .bi-zones:has([data-target="메카"]:hover) ~ #bi-desc-메카 { opacity: 1; }
+    .bi-zones:has([data-target="테크"]:hover) ~ #bi-desc-테크 { opacity: 1; }
+    .bi-zones:has([data-target="넥스"]:hover) ~ #bi-desc-넥스 { opacity: 1; }
+  </style>
+  <script>
+    (function () {
+      const zones = document.querySelector('.bi-zones');
+      zones.setAttribute('data-active', '메카');
+      zones.addEventListener('mouseenter', () => zones.removeAttribute('data-active'));
+      zones.addEventListener('mouseleave', () => zones.setAttribute('data-active', '메카'));
+    })();
+  </script>
+
+  <!-- SK테크노파크 공간구성 -->
+  <section class="py-24 bg-white">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-center mb-14 fade-in">
+        <span class="text-xs font-bold tracking-widest text-secondary uppercase">Space Guide</span>
+        <h2 class="text-3xl font-extrabold text-primary mt-2">SK테크노파크 공간구성</h2>
+      </div>
+
+      <div class="space-y-8">
+
+        <!-- 제조 공장 -->
+        <div class="flex flex-col md:flex-row items-stretch gap-4 fade-in">
+          <div class="w-full md:w-32 md:flex-shrink-0 flex items-center justify-center rounded-2xl" style="background:#5b6f8c; min-height:56px">
+            <span class="text-white font-extrabold text-sm text-center leading-snug px-3">제조·가공 공장</span>
+          </div>
+          <div class="w-full md:w-72 md:flex-shrink-0 h-52 md:h-auto overflow-hidden rounded-2xl relative after:content-[''] after:absolute after:inset-0 after:bg-black/20 after:rounded-2xl">
+            <img src="새 폴더 (3)/sk테크노파크-공간구성/제조·가공 공장.png" alt="제조·가공 공장" class="w-full h-full object-cover">
+          </div>
+          <div class="flex-1 p-6 md:p-8 flex flex-col justify-center bg-white rounded-2xl border border-slate-200 shadow-sm">
+            <p class="text-sm text-on-surface-variant leading-loose">층고 약 5~6m의 넉넉한 공간으로 크레인 설치와 차량 직접 진입이 가능합니다. 호실 문 앞 개별 주차까지 갖춰 물류 동선이 매우 편리하며, 테크동·메카동 4층까지 적용되는 구조입니다. 창원 내에서도 이 규모의 소형 공장은 찾기 어려워 수요가 가장 높은 호실 유형입니다.</p>
+          </div>
+        </div>
+
+        <!-- 조립 공장 -->
+        <div class="flex flex-col md:flex-row items-stretch gap-4 fade-in" style="transition-delay:.07s">
+          <div class="w-full md:w-32 md:flex-shrink-0 flex items-center justify-center rounded-2xl" style="background:#4e7859; min-height:56px">
+            <span class="text-white font-extrabold text-sm text-center leading-snug px-3">전기·경공업 공장</span>
+          </div>
+          <div class="w-full md:w-72 md:flex-shrink-0 h-52 md:h-auto overflow-hidden rounded-2xl relative after:content-[''] after:absolute after:inset-0 after:bg-black/20 after:rounded-2xl">
+            <img src="새 폴더 (3)/sk테크노파크-공간구성/전기·경공업 공장.png" alt="전기·경공업 공장" class="w-full h-full object-cover">
+          </div>
+          <div class="flex-1 p-6 md:p-8 flex flex-col justify-center bg-white rounded-2xl border border-slate-200 shadow-sm">
+            <p class="text-sm text-on-surface-variant leading-loose">차량이 공장 내부까지 직접 진입 가능하며, 일부 호실은 문 앞 개별 주차도 지원합니다. 과도하게 높지 않은 적정 층고 덕분에 냉난방 효율이 뛰어나고, 단지 내 공용 에어 라인을 활용할 수 있어 전기·전자 조립 업종에 특히 적합한 호실입니다.</p>
+          </div>
+        </div>
+
+        <!-- IT 업무 공간 -->
+        <div class="flex flex-col md:flex-row items-stretch gap-4 fade-in" style="transition-delay:.14s">
+          <div class="w-full md:w-32 md:flex-shrink-0 flex items-center justify-center rounded-2xl" style="background:#2c5f8a; min-height:56px">
+            <span class="text-white font-extrabold text-sm text-center leading-snug px-3">사무실</span>
+          </div>
+          <div class="w-full md:w-72 md:flex-shrink-0 h-52 md:h-auto overflow-hidden rounded-2xl relative after:content-[''] after:absolute after:inset-0 after:bg-black/20 after:rounded-2xl">
+            <img src="새 폴더 (3)/sk테크노파크-공간구성/사무실.png" alt="사무실" class="w-full h-full object-cover">
+          </div>
+          <div class="flex-1 p-6 md:p-8 flex flex-col justify-center bg-white rounded-2xl border border-slate-200 shadow-sm">
+            <p class="text-sm text-on-surface-variant leading-loose">사무실은 주로 넥스동에 집중되어 있으며, 테크동·메카동도 8층부터는 사무실 구조로 구성되어 있습니다. 일반 상가 사무실과 달리 공장등록이 가능한 것이 가장 큰 특징으로, IT·소프트웨어·전기통신업 등 지식기반 업종에 적합한 공간입니다.</p>
+          </div>
+        </div>
+
+        <!-- 지원시설 -->
+        <div class="flex flex-col md:flex-row items-stretch gap-4 fade-in" style="transition-delay:.21s">
+          <div class="w-full md:w-32 md:flex-shrink-0 flex items-center justify-center rounded-2xl" style="background:#3d5a69; min-height:56px">
+            <span class="text-white font-extrabold text-sm text-center leading-snug px-3">지원시설</span>
+          </div>
+          <div class="w-full md:w-72 md:flex-shrink-0 h-52 md:h-auto overflow-hidden rounded-2xl relative after:content-[''] after:absolute after:inset-0 after:bg-black/20 after:rounded-2xl">
+            <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&q=80&w=700" alt="지원시설" class="w-full h-full object-cover">
+          </div>
+          <div class="flex-1 p-6 md:p-8 flex flex-col justify-center bg-white rounded-2xl border border-slate-200 shadow-sm">
+            <p class="text-sm text-on-surface-variant leading-loose">넥스동 상가에 구내식당·일반식당·카페·편의점 등 식음 시설부터 은행·통신사·문구점·치과·근로자 건강센터까지 다양한 편의시설이 한 단지 안에 갖춰져 있습니다. 출퇴근 외 별도 이동 없이 업무에 집중할 수 있는 환경입니다.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 왜 SK테크노파크인가 -->
+  <section class="py-24" style="background:#eef4fb;">
+    <div class="max-w-7xl mx-auto px-6">
+
+      <!-- 상단: 텍스트 + 건물 이미지 -->
+      <div class="flex flex-col lg:flex-row gap-14 items-center mb-16 fade-in">
+        <div class="flex-1 min-w-0">
+          <span class="text-xs font-bold tracking-widest text-secondary uppercase">Why SK Technopark?</span>
+          <h2 class="text-4xl md:text-5xl font-extrabold text-primary mt-3 mb-5 leading-tight">왜 SK테크노파크여야<br>할까요?</h2>
+          <p class="text-on-surface-variant text-sm leading-loose">소형 제조업, 1인 기업, 스타트업, 사무형 공장까지<br>실사용자에게 현실적인 조건을 갖춘 지식산업센터입니다.</p>
+        </div>
+        <div class="w-full lg:w-[500px] flex-shrink-0 rounded-2xl overflow-hidden shadow-xl">
+          <img src="새 폴더 (3)/hero-skyline.png" alt="SK테크노파크 전경" class="w-full h-72 object-cover object-center">
+        </div>
+      </div>
+
+      <!-- 5개 특징 카드 -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+        <div class="bg-white rounded-2xl p-6 fade-in">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style="background:rgba(0,30,64,0.07)">
+            <span class="material-symbols-outlined text-primary text-2xl">domain</span>
+          </div>
+          <h3 class="font-extrabold text-primary text-sm mb-2 leading-snug">독립적인<br>소형 공간</h3>
+          <p class="text-xs text-on-surface-variant leading-relaxed">소규모 제조업이나 1~2인 사업자도 부담 없이 사용할 수 있는 다양한 면적의 공간이 마련되어 있습니다.</p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 fade-in" style="transition-delay:.05s">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style="background:rgba(0,30,64,0.07)">
+            <span class="material-symbols-outlined text-primary text-2xl">fact_check</span>
+          </div>
+          <h3 class="font-extrabold text-primary text-sm mb-2 leading-snug">공장등록 가능한<br>업무 환경</h3>
+          <p class="text-xs text-on-surface-variant leading-relaxed">업종 조건에 따라 공장등록이 가능해 조달, 납품, 거래처 등록 등 사업 운영에 필요한 요건을 갖출 수 있습니다.</p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 fade-in" style="transition-delay:.1s">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style="background:rgba(0,30,64,0.07)">
+            <span class="material-symbols-outlined text-primary text-2xl">commute</span>
+          </div>
+          <h3 class="font-extrabold text-primary text-sm mb-2 leading-snug">교통과<br>접근성</h3>
+          <p class="text-xs text-on-surface-variant leading-relaxed">주요 도로와 산업단지 접근성이 좋아 직원 출퇴근, 물류 이동, 거래처 방문이 편리합니다.</p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 fade-in" style="transition-delay:.15s">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style="background:rgba(0,30,64,0.07)">
+            <span class="material-symbols-outlined text-primary text-2xl">home_work</span>
+          </div>
+          <h3 class="font-extrabold text-primary text-sm mb-2 leading-snug">매입과 임대<br>모두 검토 가능</h3>
+          <p class="text-xs text-on-surface-variant leading-relaxed">당장 매입이 부담스러운 고객은 임대로 시작하고, 장기적으로 안정적인 사업장을 원하는 고객은 매입까지 검토할 수 있습니다.</p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 fade-in" style="transition-delay:.2s">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style="background:rgba(0,30,64,0.07)">
+            <span class="material-symbols-outlined text-primary text-2xl">business_center</span>
+          </div>
+          <h3 class="font-extrabold text-primary text-sm mb-2 leading-snug">사업자에게 유리한<br>실사용 가치</h3>
+          <p class="text-xs text-on-surface-variant leading-relaxed">단순 투자용 부동산이 아니라 실제 사업 운영에 필요한 공간, 비용, 행정 요건을 함께 고려할 수 있는 곳입니다.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 입지 & 접근성 -->
+  <section class="py-24" style="background:#f1f4f6">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16 fade-in">
+        <span class="text-xs font-bold tracking-widest text-secondary uppercase">LOCATION</span>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-primary mt-2 mb-4">입지 및 접근성</h2>
+        <div class="w-10 h-0.5 mx-auto mb-5" style="background:#156874"></div>
+        <p class="text-sm text-on-surface-variant">뛰어난 접근성과 편리한 교통환경으로 비즈니스의 가치를 높입니다.</p>
+      </div>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+
+        <!-- 왼쪽: 정보 카드 -->
+        <div class="space-y-4 fade-in">
+
+          <div class="bg-white rounded-2xl border border-slate-100 p-6 flex items-start gap-4 shadow-sm">
+            <div class="w-12 h-12 rounded-xl flex-shrink-0 flex items-center justify-center" style="background:#156874">
+              <span class="material-symbols-outlined text-white text-xl">directions_car</span>
+            </div>
+            <div class="flex-1">
+              <h4 class="font-extrabold mb-2" style="color:#156874">접근성</h4>
+              <p class="text-sm text-on-surface-variant leading-relaxed mb-3">마산·진해·김해를 연결하는 중간 지점에 위치해 창원 전역은 물론 인근 도시에서도 일반 국도를 통해 편리하게 오실 수 있습니다.</p>
+              <div class="grid grid-cols-3 gap-2">
+                <div class="bg-slate-50 rounded-xl p-3 text-center">
+                  <div class="text-xs text-slate-400 mb-1">마산</div>
+                  <div class="text-sm font-extrabold text-primary">약 15~20분</div>
+                </div>
+                <div class="bg-slate-50 rounded-xl p-3 text-center">
+                  <div class="text-xs text-slate-400 mb-1">진해</div>
+                  <div class="text-sm font-extrabold text-primary">약 20~25분</div>
+                </div>
+                <div class="bg-slate-50 rounded-xl p-3 text-center">
+                  <div class="text-xs text-slate-400 mb-1">김해</div>
+                  <div class="text-sm font-extrabold text-primary">약 25~30분</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl border border-slate-100 p-6 flex items-start gap-4 shadow-sm">
+            <div class="w-12 h-12 rounded-xl flex-shrink-0 flex items-center justify-center" style="background:#7c3aed">
+              <span class="material-symbols-outlined text-white text-xl">apartment</span>
+            </div>
+            <div>
+              <h4 class="font-extrabold mb-2" style="color:#7c3aed">인근 주거지 및 편의시설</h4>
+              <p class="text-sm text-on-surface-variant leading-relaxed">용호동·상남동·가음정 등 창원 주요 주거지와 인접해 직원 출퇴근이 편리합니다. 단지 내 넥스동 상가에 구내식당을 비롯한 편의시설이 갖춰져 있어 입주 기업 직원들의 일상 생활도 불편함이 없습니다.</p>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl border border-slate-100 p-6 flex items-start gap-4 shadow-sm">
+            <div class="w-12 h-12 rounded-xl flex-shrink-0 flex items-center justify-center bg-emerald-600">
+              <span class="material-symbols-outlined text-white text-xl">local_parking</span>
+            </div>
+            <div>
+              <h4 class="font-extrabold text-emerald-600 mb-2">주차</h4>
+              <p class="text-sm text-on-surface-variant leading-relaxed">1층부터 12층까지 각 층마다 주차 공간이 마련되어 있어 전체 주차 규모가 넉넉합니다. 입주사 전용 주차구역이 별도 배정되며, 호실 바로 앞 주차가 가능한 호실도 있습니다.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- 오른쪽: 지도 -->
+        <div class="relative rounded-2xl overflow-hidden shadow-lg fade-in" style="transition-delay:.15s">
+          <iframe
+            src="https://maps.google.com/maps?q=경남+창원시+성산구+완암로+50&output=embed&z=14"
+            width="100%" height="480" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade" title="SK테크노파크 위치">
+          </iframe>
+          <div class="absolute bottom-0 left-0 right-0 bg-white px-5 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0" style="background:#e8f4f6">
+                <span class="material-symbols-outlined text-sm" style="color:#156874">location_on</span>
+              </div>
+              <div>
+                <div class="text-sm font-bold text-primary leading-tight">경남 창원시 성산구 완암로 50</div>
+                <div class="text-xs text-slate-400 mt-0.5">성산구 완암동 소재</div>
+              </div>
+            </div>
+            <a href="https://maps.google.com/maps?q=경남+창원시+성산구+완암로+50" target="_blank"
+               class="flex items-center gap-1 text-xs font-bold hover:opacity-70 transition-opacity flex-shrink-0 ml-4" style="color:#156874">
+              지도 크게 보기
+              <span class="material-symbols-outlined text-base leading-none">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 bg-primary text-white text-center">
+    <div class="max-w-2xl mx-auto px-6 fade-in">
+      <h2 class="text-3xl font-extrabold mb-4">지금 바로 상담을 받아보세요</h2>
+      <p class="text-blue-200 mb-8 leading-relaxed">어떤 동, 어떤 규모, 어떤 업종이든 맞춤 매물을 안내해드립니다.<br>15년 이상의 경험과 신뢰로 최선을 다하겠습니다.</p>
+      <div class="flex flex-wrap gap-4 justify-center">
+        <a href="about.html" class="bg-white text-primary px-8 py-3.5 rounded-lg font-semibold hover:opacity-90 transition-opacity text-sm flex items-center gap-2">
+          소장 소개 및 연락처 <span class="material-symbols-outlined text-base">arrow_forward</span>
+        </a>
+        <a href="cases.html" class="bg-white/10 text-white px-8 py-3.5 rounded-lg font-semibold hover:bg-white/20 transition-colors text-sm">
+          거래 사례 보기
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-slate-100 border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-10">
+      <div class="space-y-3">
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-primary">domain</span>
+          <span class="font-black text-primary text-sm">SK테크노파크 공인중개사 사무소</span>
+        </div>
+        <p class="text-xs text-slate-500">등록번호 48123-2020-00028 | 소장: 박성준</p>
+        <p class="text-xs text-slate-500">신뢰와 정직을 바탕으로 최선의 결과를 약속드립니다.</p>
+      </div>
+      <div>
+        <h5 class="text-xs font-bold text-primary mb-4 uppercase tracking-wide">Quick Links</h5>
+        <ul class="space-y-2">
+          <li><a href="index.html"   class="text-xs text-slate-500 hover:text-primary transition-colors">홈</a></li>
+          <li><a href="about.html"   class="text-xs text-slate-500 hover:text-primary transition-colors">소개</a></li>
+          <li><a href="park.html"    class="text-xs text-slate-500 hover:text-primary transition-colors">SK테크노파크</a></li>
+          <li><a href="cases.html"   class="text-xs text-slate-500 hover:text-primary transition-colors">거래 사례</a></li>
+          <li><a href="gallery.html" class="text-xs text-slate-500 hover:text-primary transition-colors">사진 갤러리</a></li>
+          <li><a href="faq.html"     class="text-xs text-slate-500 hover:text-primary transition-colors">자주 묻는 질문</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 class="text-xs font-bold text-primary mb-4 uppercase tracking-wide">Contact Us</h5>
+        <ul class="space-y-2.5 text-xs text-slate-500">
+          <li class="flex items-start gap-2"><span class="material-symbols-outlined text-sm text-primary mt-0.5">phone</span><span>010-5623-2454 / 055-265-1551</span></li>
+          <li class="flex items-start gap-2"><span class="material-symbols-outlined text-sm text-primary mt-0.5">print</span><span>Fax. 055-600-6886</span></li>
+          <li class="flex items-start gap-2"><span class="material-symbols-outlined text-sm text-primary mt-0.5">mail</span><span>dk11232@naver.com</span></li>
+          <li class="flex items-start gap-2"><span class="material-symbols-outlined text-sm text-primary mt-0.5">location_on</span><span>경남 창원시 성산구 완암로 50, 넥스동 106호</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-slate-200 px-6 py-4 max-w-7xl mx-auto">
+      <p class="text-xs text-slate-400">&copy; <span id="year"></span> SK테크노파크 공인중개사 사무소. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

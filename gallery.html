@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>사진 갤러리 | SK테크노파크 공인중개사</title>
+  <meta name="description" content="SK테크노파크 공인중개사 사무소 실제 사진 갤러리. 단지 내부, 공장, 사무실, 컨설팅 현장 사진.">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-surface-variant": "#43474f",
+            "on-primary": "#ffffff",
+            "primary": "#001e40",
+            "primary-container": "#003366",
+            "surface-container-high": "#e5e9eb",
+            "on-surface": "#181c1e",
+            "surface-container": "#ebeef0",
+            "surface": "#f7fafc",
+            "surface-variant": "#e0e3e5",
+            "background": "#f7fafc",
+            "on-secondary-container": "#1c6c78",
+            "outline-variant": "#c3c6d1",
+            "surface-container-low": "#f1f4f6",
+            "secondary": "#156874",
+            "secondary-container": "#a4ebf9",
+            "surface-container-highest": "#e0e3e5",
+            "on-secondary": "#ffffff",
+          },
+          fontFamily: {
+            headline: ["Manrope", "sans-serif"],
+            body: ["Inter", "sans-serif"],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    h1,h2,h3,h4,h5 { font-family: 'Manrope', sans-serif; }
+
+    /* ── 벤토 그리드 공통 ── */
+    .bento-row {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .bento-row .g-item {
+      flex: 1;
+      height: 100%;
+      border-radius: 14px;
+      overflow: hidden;
+      cursor: pointer;
+      position: relative;
+    }
+    .bento-row .g-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    .bento-row .g-item:hover img { transform: scale(1.04); }
+    .bento-row .g-item .ov {
+      position: absolute; inset: 0;
+      background: rgba(0,30,64,0.38);
+      opacity: 0;
+      transition: opacity 0.3s;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .bento-row .g-item:hover .ov { opacity: 1; }
+
+    /* 사이드 2단 컬럼 */
+    .bento-side {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .bento-side .g-item { flex: 1; }
+
+    /* 각 행 높이 */
+    .row-460 { height: 460px; }
+    .row-290 { height: 290px; }
+    .row-350 { height: 350px; }
+    .row-270 { height: 270px; }
+    .row-310 { height: 310px; }
+
+    /* flex 크기 비율 */
+    .f2 { flex: 2 !important; }
+    .f15 { flex: 1.5 !important; }
+
+    @media (max-width: 768px) {
+      .bento-row { flex-direction: column; height: auto !important; }
+      .bento-row .g-item { height: 220px; flex: none; }
+      .bento-side { flex-direction: row; }
+      .bento-side .g-item { height: 160px; flex: 1; }
+      .f2, .f15 { flex: 1 !important; }
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface">
+
+  <!-- Navigation -->
+  <nav class="bg-white border-b border-slate-200 sticky top-0 z-50">
+    <div class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+      <a href="index.html" class="flex items-center gap-3">
+        <span class="material-symbols-outlined text-primary text-3xl">domain</span>
+        <div>
+          <div class="text-sm font-black text-primary leading-tight">SK테크노파크</div>
+          <div class="text-xs text-slate-400">공인중개사 사무소</div>
+        </div>
+      </a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="index.html"   class="text-sm font-bold text-slate-500 hover:text-primary transition-colors border-b-2 border-transparent pb-0.5">홈</a>
+        <a href="about.html"   class="text-sm font-bold text-slate-500 hover:text-primary transition-colors border-b-2 border-transparent pb-0.5">소개</a>
+        <a href="park.html"    class="text-sm font-bold text-slate-500 hover:text-primary transition-colors border-b-2 border-transparent pb-0.5">SK테크노파크</a>
+        <a href="cases.html"   class="text-sm font-bold text-slate-500 hover:text-primary transition-colors border-b-2 border-transparent pb-0.5">거래 사례</a>
+        <a href="gallery.html" class="text-sm font-bold text-primary border-b-2 border-primary pb-0.5">사진 갤러리</a>
+        <a href="faq.html"     class="text-sm font-bold text-slate-500 hover:text-primary transition-colors border-b-2 border-transparent pb-0.5">자주 묻는 질문</a>
+      </div>
+      <button class="md:hidden p-2 hover:bg-slate-100 rounded-lg transition-colors" id="mobile-menu-btn">
+        <span class="material-symbols-outlined text-primary" id="menu-icon">menu</span>
+      </button>
+    </div>
+    <div class="hidden bg-white border-t border-slate-100 px-6 py-3 space-y-1" id="mobile-nav">
+      <a href="index.html"   class="block text-sm font-semibold text-slate-600 py-2.5 border-b border-slate-100">홈</a>
+      <a href="about.html"   class="block text-sm font-semibold text-slate-600 py-2.5 border-b border-slate-100">소개</a>
+      <a href="park.html"    class="block text-sm font-semibold text-slate-600 py-2.5 border-b border-slate-100">SK테크노파크</a>
+      <a href="cases.html"   class="block text-sm font-semibold text-slate-600 py-2.5 border-b border-slate-100">거래 사례</a>
+      <a href="gallery.html" class="block text-sm font-semibold text-primary py-2.5 border-b border-slate-100">사진 갤러리</a>
+      <a href="faq.html"     class="block text-sm font-semibold text-slate-600 py-2.5">자주 묻는 질문</a>
+    </div>
+  </nav>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <img class="page-hero-img" src="새 폴더 (3)/assets/office-building.png" alt="사진 갤러리">
+    <div class="page-hero-gradient"></div>
+    <div class="page-hero-content max-w-7xl mx-auto px-6">
+      <p class="page-hero-breadcrumb"><a href="index.html">홈</a><span>/</span>사진 갤러리</p>
+      <h1 class="page-hero-title">사진 갤러리</h1>
+      <p class="page-hero-desc">SK테크노파크 단지 내부, 공장·사무실, 컨설팅 현장 사진을 확인하세요.</p>
+    </div>
+  </section>
+
+  <!-- 갤러리 본문 -->
+  <section class="py-14 bg-surface">
+    <div class="max-w-7xl mx-auto px-6">
+
+      <!-- ── Row 1: 큰 사진(좌) + 2장 세로 (우) ── -->
+      <div class="bento-row row-460 fade-in appear">
+        <div class="g-item f2" data-index="0">
+          <img src="사진/KakaoTalk_20260313_110113484_02.jpg" alt="SK테크노파크">
+          <div class="ov"><span class="material-symbols-outlined text-white text-3xl">zoom_in</span></div>
+        </div>
+        <div class="bento-side" style="flex:1">
+          <div class="g-item" data-index="1">
+            <img src="사진/KakaoTalk_20260313_110113484_05.jpg" alt="SK테크노파크">
+            <div class="ov"><span class="material-symbols-outlined text-white text-3xl">zoom_in</span></div>
+          </div>
+          <div class="g-item" data-index="2">
+            <img src="사진/KakaoTalk_20260122_164932085_09.jpg" alt="SK테크노파크">
+            <div class="ov"><span class="material-symbols-outlined text-white text-3xl">zoom_in</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Row 2: 3장 동등 ── -->
+      <div class="bento-row row-290 fade-in appear">
+        <div class="g-item" data-index="3">
+          <img src="사진/IMG_7229.JPG" alt="SK테크노파크">
+          <div class="ov"><span class="material-symbols-outlined text-white text-3xl">zoom_in</span></div>
+        </div>
+        <div class="g-item" data-index="4">
+          <img src="사진/IMG_7188.JPG" alt="SK테크노파크">
+          <div class="ov"><span class="material-symbols-outlined text-white text-3xl">zoom_in</span></div>
+        </div>
+        <div class="g-item" data-index="5">
+          <img src="사진/IMG_7191.JPG" alt="SK테크노파크">
+          <div class="ov"><span class="material-symbols-outlined text-white text-3xl">zoom_in</span></div>
+        </div>
+      </div>
+
+      <!-- ── Row 3: 작은(좌) + 큰(가운데) + 작은(우) ── -->
+      <div class="bento-row row-350 fade-in appear">
+        <div class="g-item" data-index="6">
+          <img src="사진/KakaoTalk_20241017_161049155_06.jpg" alt="SK테크노파크">
+          <div class="ov"><span class="material-symbols-outlined text-white text-3xl">zoom_in</span></div>
+        </div>
+        <div class="g-item f2" data-index="7">
+          <img src="사진/KakaoTalk_20231108_142624344_02.jpg" alt="SK테크노파크">
+          <div class="ov"><span class="material-symbols-outlined text-white text-3xl">zoom_in</span></div>
+        </div>
+        <div class="g-item" data-index="8">
+          <img src="사진/KakaoTalk_20230705_152056889_02.jpg" alt="SK테크노파크">
+          <div class="ov"><span class="material-symbols-outlined text-white text-3xl">zoom_in</span></div>
+        </div>
+      </div>
+
+      <!-- ── Row 4: 4장 동등 ── -->
+      <div class="bento-row row-270 fade-in appear">
+        <div class="g-item" data-index="9">
+          <img src="사진/IMG_7001.JPG" alt="SK테크노파크">
+          <div class="ov"><span class="material-symbols-outlined text-white text-3xl">zoom_in</span></div>
+        </div>
+        <div class="g-item" data-index="10">
+          <img src="사진/IMG_7149.JPG" alt="SK테크노파크">
+          <div class="ov"><span class="material-symbols-outlined text-white text-3xl">zoom_in</span></div>
+        </div>
+        <div class="g-item" data-index="11">
+          <img src="사진/KakaoTalk_20220615_142805421_08.jpg" alt="SK테크노파크">
+          <div class="ov"><span class="material-symbols-outlined text-white text-3xl">zoom_in</span></div>
+        </div>
+        <div class="g-item" data-index="12">
+          <img src="사진/KakaoTalk_20200512_154842448_01.jpg" alt="SK테크노파크">
+          <div class="ov"><span class="material-symbols-outlined text-white text-3xl">zoom_in</span></div>
+        </div>
+      </div>
+
+      <!-- ── Row 5: 2장(좌 세로) + 큰(우) ── -->
+      <div class="bento-row row-460 fade-in appear">
+        <div class="bento-side" style="flex:1">
+          <div class="g-item" data-index="13">
+            <img src="사진/KakaoTalk_20251104_114332550_04.jpg" alt="SK테크노파크">
+            <div class="ov"><span class="material-symbols-outlined text-white text-3xl">zoom_in</span></div>
+          </div>
+          <div class="g-item" data-index="14">
+            <img src="사진/IMG_6752.JPG" alt="SK테크노파크">
+            <div class="ov"><span class="material-symbols-outlined text-white text-3xl">zoom_in</span></div>
+          </div>
+        </div>
+        <div class="g-item f2" data-index="15">
+          <img src="사진/IMG_6741.JPG" alt="SK테크노파크">
+          <div class="ov"><span class="material-symbols-outlined text-white text-3xl">zoom_in</span></div>
+        </div>
+      </div>
+
+      <!-- ── Row 6: 3장 (1.5 + 1 + 1) ── -->
+      <div class="bento-row row-310 fade-in appear">
+        <div class="g-item f15" data-index="16">
+          <img src="사진/IMG_6697.JPG" alt="SK테크노파크">
+          <div class="ov"><span class="material-symbols-outlined text-white text-3xl">zoom_in</span></div>
+        </div>
+        <div class="g-item" data-index="17">
+          <img src="사진/IMG_6633.JPG" alt="SK테크노파크">
+          <div class="ov"><span class="material-symbols-outlined text-white text-3xl">zoom_in</span></div>
+        </div>
+        <div class="g-item" data-index="18">
+          <img src="사진/IMG_6576.JPG" alt="SK테크노파크">
+          <div class="ov"><span class="material-symbols-outlined text-white text-3xl">zoom_in</span></div>
+        </div>
+      </div>
+
+      <!-- ── Row 7: 2장(좌 세로) + 큰(우) ── -->
+      <div class="bento-row row-460 fade-in">
+        <div class="bento-side" style="flex:1">
+          <div class="g-item" data-index="19">
+            <img src="사진/IMG_6158.JPG" alt="SK테크노파크">
+            <div class="ov"><span class="material-symbols-outlined text-white text-3xl">zoom_in</span></div>
+          </div>
+          <div class="g-item" data-index="20">
+            <img src="사진/IMG_5801.JPG" alt="SK테크노파크">
+            <div class="ov"><span class="material-symbols-outlined text-white text-3xl">zoom_in</span></div>
+          </div>
+        </div>
+        <div class="g-item f2" data-index="21">
+          <img src="사진/KakaoTalk_20190413_114712157_03.jpg" alt="SK테크노파크">
+          <div class="ov"><span class="material-symbols-outlined text-white text-3xl">zoom_in</span></div>
+        </div>
+      </div>
+
+      <!-- ── Row 8: 3장 동등 ── -->
+      <div class="bento-row row-290 fade-in">
+        <div class="g-item" data-index="22">
+          <img src="사진/KakaoTalk_20190528_125141784_04.jpg" alt="SK테크노파크">
+          <div class="ov"><span class="material-symbols-outlined text-white text-3xl">zoom_in</span></div>
+        </div>
+        <div class="g-item" data-index="23">
+          <img src="사진/KakaoTalk_20190612_144302281_22.jpg" alt="SK테크노파크">
+          <div class="ov"><span class="material-symbols-outlined text-white text-3xl">zoom_in</span></div>
+        </div>
+        <div class="g-item" data-index="24">
+          <img src="사진/KakaoTalk_20190731_120244902_01.jpg" alt="SK테크노파크">
+          <div class="ov"><span class="material-symbols-outlined text-white text-3xl">zoom_in</span></div>
+        </div>
+      </div>
+
+      <!-- ── Row 9: 작은(좌) + 큰(가운데) + 작은(우) ── -->
+      <div class="bento-row row-350 fade-in">
+        <div class="g-item" data-index="25">
+          <img src="사진/KakaoTalk_20190731_120244902_04.jpg" alt="SK테크노파크">
+          <div class="ov"><span class="material-symbols-outlined text-white text-3xl">zoom_in</span></div>
+        </div>
+        <div class="g-item f2" data-index="26">
+          <img src="사진/892e23b9-31a7-4bd9-99ed-833d41014bbf.png" alt="SK테크노파크">
+          <div class="ov"><span class="material-symbols-outlined text-white text-3xl">zoom_in</span></div>
+        </div>
+        <div class="g-item" data-index="27">
+          <img src="사진/24561288-2199-418c-8840-dbefda19d5d9.png" alt="SK테크노파크">
+          <div class="ov"><span class="material-symbols-outlined text-white text-3xl">zoom_in</span></div>
+        </div>
+      </div>
+
+      <!-- ── Row 10: 좁은(좌) + 중간 + 넓은(우) ── -->
+      <div class="bento-row row-310 fade-in">
+        <div class="g-item" style="flex:0.75" data-index="28">
+          <img src="사진/4d18af4e-f8c7-4c89-a922-a85724375320.png" alt="SK테크노파크">
+          <div class="ov"><span class="material-symbols-outlined text-white text-3xl">zoom_in</span></div>
+        </div>
+        <div class="g-item" data-index="29">
+          <img src="사진/3475d5e8-5ded-42df-9958-aa0b29d9d512.png" alt="SK테크노파크">
+          <div class="ov"><span class="material-symbols-outlined text-white text-3xl">zoom_in</span></div>
+        </div>
+        <div class="g-item f15" data-index="30">
+          <img src="사진/11ea7ad8-33a6-48cd-9c1b-d2aaf77a08ad.png" alt="SK테크노파크">
+          <div class="ov"><span class="material-symbols-outlined text-white text-3xl">zoom_in</span></div>
+        </div>
+      </div>
+
+      <!-- ── Row 11: 3장 동등 ── -->
+      <div class="bento-row row-290 fade-in">
+        <div class="g-item" data-index="31">
+          <img src="사진/1687bd97-7485-444d-a7df-126a32b20702.png" alt="SK테크노파크">
+          <div class="ov"><span class="material-symbols-outlined text-white text-3xl">zoom_in</span></div>
+        </div>
+        <div class="g-item" data-index="32">
+          <img src="사진/a2b7aec8-40c1-42a2-b1bb-ba3af21ee6b7.png" alt="SK테크노파크">
+          <div class="ov"><span class="material-symbols-outlined text-white text-3xl">zoom_in</span></div>
+        </div>
+        <div class="g-item" data-index="33">
+          <img src="사진/b1083e86-37aa-443e-b2bd-78deb0b76e1b.png" alt="SK테크노파크">
+          <div class="ov"><span class="material-symbols-outlined text-white text-3xl">zoom_in</span></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 라이트박스 -->
+  <div id="lightbox">
+    <div id="lb-close"><span class="material-symbols-outlined text-white">close</span></div>
+    <div id="lb-prev"><span class="material-symbols-outlined text-white">chevron_left</span></div>
+    <img id="lb-img" src="" alt="확대 보기">
+    <div id="lb-next"><span class="material-symbols-outlined text-white">chevron_right</span></div>
+    <div id="lb-counter"></div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-slate-100 border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-10">
+      <div class="space-y-3">
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-primary">domain</span>
+          <span class="font-black text-primary text-sm">SK테크노파크 공인중개사 사무소</span>
+        </div>
+        <p class="text-xs text-slate-500">등록번호 48123-2020-00028 | 소장: 박성준</p>
+        <p class="text-xs text-slate-500">신뢰와 정직을 바탕으로 최선의 결과를 약속드립니다.</p>
+      </div>
+      <div>
+        <h5 class="text-xs font-bold text-primary mb-4 uppercase tracking-wide">Quick Links</h5>
+        <ul class="space-y-2">
+          <li><a href="index.html"   class="text-xs text-slate-500 hover:text-primary transition-colors">홈</a></li>
+          <li><a href="about.html"   class="text-xs text-slate-500 hover:text-primary transition-colors">소개</a></li>
+          <li><a href="park.html"    class="text-xs text-slate-500 hover:text-primary transition-colors">SK테크노파크</a></li>
+          <li><a href="cases.html"   class="text-xs text-slate-500 hover:text-primary transition-colors">거래 사례</a></li>
+          <li><a href="gallery.html" class="text-xs text-slate-500 hover:text-primary transition-colors">사진 갤러리</a></li>
+          <li><a href="faq.html"     class="text-xs text-slate-500 hover:text-primary transition-colors">자주 묻는 질문</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 class="text-xs font-bold text-primary mb-4 uppercase tracking-wide">Contact Us</h5>
+        <ul class="space-y-2.5 text-xs text-slate-500">
+          <li class="flex items-start gap-2"><span class="material-symbols-outlined text-sm text-primary mt-0.5">phone</span><span>010-5623-2454 / 055-265-1551</span></li>
+          <li class="flex items-start gap-2"><span class="material-symbols-outlined text-sm text-primary mt-0.5">print</span><span>Fax. 055-600-6886</span></li>
+          <li class="flex items-start gap-2"><span class="material-symbols-outlined text-sm text-primary mt-0.5">mail</span><span>dk11232@naver.com</span></li>
+          <li class="flex items-start gap-2"><span class="material-symbols-outlined text-sm text-primary mt-0.5">location_on</span><span>경남 창원시 성산구 완암로 50, 넥스동 106호</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-slate-200 px-6 py-4 max-w-7xl mx-auto">
+      <p class="text-xs text-slate-400">&copy; <span id="year"></span> SK테크노파크 공인중개사 사무소. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    (function () {
+      const items = Array.from(document.querySelectorAll('.g-item[data-index]'))
+        .sort((a, b) => Number(a.dataset.index) - Number(b.dataset.index));
+      const srcs  = items.map(el => el.querySelector('img').src);
+      const total = srcs.length;
+
+      const lb      = document.getElementById('lightbox');
+      const lbImg   = document.getElementById('lb-img');
+      const lbClose = document.getElementById('lb-close');
+      const lbPrev  = document.getElementById('lb-prev');
+      const lbNext  = document.getElementById('lb-next');
+      const lbCtr   = document.getElementById('lb-counter');
+      let cur = 0;
+
+      function open(idx) {
+        cur = (idx + total) % total;
+        lbImg.src = srcs[cur];
+        lbCtr.textContent = (cur + 1) + ' / ' + total;
+        lb.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+      function close() {
+        lb.classList.remove('active');
+        document.body.style.overflow = '';
+        lbImg.src = '';
+      }
+
+      items.forEach((el, i) => el.addEventListener('click', () => open(i)));
+      lbClose.addEventListener('click', close);
+      lbPrev.addEventListener('click',  () => open(cur - 1));
+      lbNext.addEventListener('click',  () => open(cur + 1));
+      lb.addEventListener('click', e => { if (e.target === lb) close(); });
+      document.addEventListener('keydown', e => {
+        if (!lb.classList.contains('active')) return;
+        if (e.key === 'Escape')     close();
+        if (e.key === 'ArrowLeft')  open(cur - 1);
+        if (e.key === 'ArrowRight') open(cur + 1);
+      });
+    })();
+  </script>
+</body>
+</html>

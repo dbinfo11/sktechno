@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.kic114.kr)",
+      "WebFetch(domain:jumpapp.co.kr)",
+      "WebFetch(domain:land.daara.co.kr)",
+      "WebFetch(domain:unsplash.com)",
+      "PowerShell(Get-ChildItem \"C:\\\\Users\\\\dbinf\\\\Desktop\" | ForEach-Object { $_.Name })",
+      "PowerShell(Get-ChildItem \"C:\\\\Users\\\\dbinf\\\\Desktop\\\\ai\\\\anti\\\\SK테크노파크 홈페이지\\\\새 폴더 \\(3\\)\\\\컨설팅 사례 이모지 모음\" | ForEach-Object { $_.Name })",
+      "PowerShell(Get-ChildItem \"C:\\\\Users\\\\dbinf\\\\Desktop\\\\ai\\\\anti\\\\SK테크노파크 홈페이지\\\\사진\" | ForEach-Object { $_.Name } | Sort-Object)",
+      "Read(//c/Users/dbinf/.claude/projects/c--Users-dbinf-Desktop-ai-anti-SK----------/**)",
+      "Bash(findstr credential *)",
+      "PowerShell(git config --global --list)",
+      "Bash(git commit -m ' *)",
+      "Bash(git commit --allow-empty -m ' *)"
+    ]
+  }
+}
