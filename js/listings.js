@@ -78,6 +78,12 @@ const SK_LISTINGS = [
     const byPrice = (a, b) => Boolean(a.sale) - Boolean(b.sale)
         || (a.sale || a.monthly || 0) - (b.sale || b.monthly || 0)
         || (a.deposit || 0) - (b.deposit || 0);
+    // 처음 화면(정렬을 고르기 전): 페이지를 열 때마다 순서를 새로 섞습니다. 필터를 눌러도 같은 방문 동안은 순서가 유지됩니다.
+    const shuffleRank = new Map();
+    const rankOf = p => {
+        if (!shuffleRank.has(p.id)) shuffleRank.set(p.id, Math.random());
+        return shuffleRank.get(p.id);
+    };
 
     function notify(t) {
         const el = $('lst-toast');
@@ -90,7 +96,12 @@ const SK_LISTINGS = [
     function render() {
         let rows = all().filter(p => (deal === '전체' || p.deals.includes(deal)) && (type === '전체' || p.type === type));
         const sort = $('lst-sort').value;
-        rows.sort(sort === 'high' ? (a, b) => byPrice(b, a) : byPrice);
+        const order = {
+            random: (a, b) => rankOf(a) - rankOf(b),
+            low: byPrice,
+            high: (a, b) => byPrice(b, a)
+        };
+        rows.sort(order[sort] || order.random);
 
         const filtered = deal !== '전체' || type !== '전체';
         $('lst-sub').textContent = filtered ? rows.length + '개의 매물을 찾았어요' : 'SK테크노파크 단지 내 공장·사무실 매물을 확인하세요.';
@@ -193,6 +204,8 @@ const SK_LISTINGS = [
 
         document.querySelectorAll('[data-lst-deal]').forEach(b => b.onclick = () => { deal = b.dataset.lstDeal; render(); });
         document.querySelectorAll('[data-lst-type]').forEach(b => b.onclick = () => { type = b.dataset.lstType; render(); });
+        // 새로고침하면 브라우저가 이전에 고른 정렬을 되살리므로 처음엔 항상 섞인 순서('정렬' 표시)로 맞춥니다.
+        $('lst-sort').value = 'random';
         $('lst-sort').onchange = render;
         $('lst-search').onsubmit = e => e.preventDefault();
 
